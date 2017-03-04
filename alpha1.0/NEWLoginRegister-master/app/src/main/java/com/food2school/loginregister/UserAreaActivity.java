@@ -1,4 +1,4 @@
-package com.tonikamitv.loginregister;
+package com.food2school.loginregister;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
