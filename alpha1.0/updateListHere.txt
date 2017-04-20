@@ -1,3 +1,5 @@
 alpha1.0:
 Setup data server on 000webhost
 Implement(copy from github) basic login and register function.
+hongniay@gmail.com
+03291856

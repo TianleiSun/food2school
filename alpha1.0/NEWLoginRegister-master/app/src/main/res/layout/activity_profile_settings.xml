@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.food2school.loginregister.ProfileSettings">
+
+    <TextView
+        android:id="@+id/setting_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="46dp"
+        android:text="Username"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/setting_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="0dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toRightOf="@+id/setting_name"
+        app:layout_constraintTop_toTopOf="@+id/setting_name" />
+
+    <TextView
+        android:id="@+id/setting_user_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="Address"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_name"
+        app:layout_constraintTop_toBottomOf="@+id/setting_name" />
+
+    <TextView
+        android:id="@+id/setting_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-141dp"
+        android:layout_marginTop="-16dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_username"
+        app:layout_constraintTop_toTopOf="@+id/setting_user_addr" />
+
+    <TextView
+        android:id="@+id/setting_user_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="Phone"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_name"
+        app:layout_constraintTop_toBottomOf="@+id/setting_user_addr" />
+
+    <TextView
+        android:id="@+id/setting_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-18dp"
+        android:layout_marginTop="-64dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_username"
+        app:layout_constraintTop_toTopOf="@+id/setting_user_phone" />
+
+    <TextView
+        android:id="@+id/setting_user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="Email"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_name"
+        app:layout_constraintTop_toBottomOf="@+id/setting_user_phone" />
+
+    <TextView
+        android:id="@+id/setting_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-16dp"
+        android:layout_marginTop="0dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/setting_username"
+        app:layout_constraintTop_toTopOf="@+id/setting_user_email" />
+
+</android.support.constraint.ConstraintLayout>
