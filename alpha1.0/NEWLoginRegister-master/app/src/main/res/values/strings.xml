@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Food to School</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="main_page">Main Page</string>
+    <string name="profile_settings">Profile and Settings</string>
+    <string name="log_in">Log In</string>
+    <string name="register">Register Page</string>
+
+
 </resources>
