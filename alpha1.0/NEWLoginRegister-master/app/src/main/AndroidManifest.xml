@@ -19,17 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity"
-            android:label="@string/log_in"/>
-        <activity android:name=".RegisterActivity"
-            android:label="@string/register"/>
-        <activity android:name=".UserAreaActivity"
-            android:label="@string/main_page">
+            android:label="@string/log_in">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegisterActivity"
+            android:label="@string/register"/>
+        <activity android:name=".UserAreaActivity"
+            android:label="@string/main_page"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
