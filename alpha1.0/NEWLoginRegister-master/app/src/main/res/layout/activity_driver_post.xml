@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.food2school.loginregister.DriverPost">
+
+    <EditText
+        android:id="@+id/etRestaurant"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="Going to..."
+        android:inputType="text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etReturnAddress"
+        android:layout_width="172dp"
+        android:layout_height="39dp"
+        android:hint="Address"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintLeft_toRightOf="@+id/textView2"
+        android:layout_marginLeft="115dp" />
+
+    <EditText
+        android:id="@+id/etFinishTime"
+        android:layout_width="171dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="0dp"
+        android:hint="Time"
+        android:inputType="time"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+        app:layout_constraintLeft_toLeftOf="@+id/etReturnAddress" />
+
+    <EditText
+        android:id="@+id/etAcceptUntil"
+        android:layout_width="171dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="0dp"
+        android:hint="Time"
+        android:inputType="time"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
+        app:layout_constraintLeft_toLeftOf="@+id/etReturnAddress" />
+
+    <EditText
+        android:id="@+id/etMaxOrderNum"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:hint="Number"
+        android:inputType="text|number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+        app:layout_constraintLeft_toLeftOf="@+id/etReturnAddress" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="26dp"
+        android:text="Back to:"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/etRestaurant"
+        app:layout_constraintTop_toBottomOf="@+id/etRestaurant" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp"
+        android:text="Finish At:"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="31dp"
+        android:text="Accept Order Until:"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp"
+        android:text="Max Order Number:"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/bDriverPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Post"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/bDriverSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:text="Search"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/etRestaurant"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etRestaurant" />
+
+
+</android.support.constraint.ConstraintLayout>

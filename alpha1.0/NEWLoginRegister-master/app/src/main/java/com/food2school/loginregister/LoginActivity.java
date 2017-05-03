@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         final Button bLogin = (Button) findViewById(R.id.bSignIn);
+        final ProgressBar pbar= (ProgressBar) findViewById(R.id.progressBar1) ;
 
         tvRegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,10 +55,16 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (success) {
                                 int userID = Integer.parseInt(jsonResponse.getString("userID"));
+                                String username=jsonResponse.getString("username");
+                                String email=jsonResponse.getString("email");
+                                String phone=jsonResponse.getString("phone");
+                                String address=jsonResponse.getString("address");
+                                User userInfo=new User(username, userID, address, phone, email);
+
 
                                 Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
-                                intent.putExtra("userID", userID);
-
+                                intent.putExtra("user", userInfo);
+                                pbar.setVisibility(View.GONE);
                                 LoginActivity.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
@@ -75,6 +83,8 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
+                pbar.setVisibility(View.VISIBLE);
+
             }
         });
     }
