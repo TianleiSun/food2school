@@ -36,9 +36,9 @@ public class DriverDeliveryStatus extends AppCompatActivity {
             final TextView returnAdd = (TextView) findViewById(R.id.tvDeliReturnAddr);
 
             orderInfo.setText("Description of Address, Food name and quantity");
-            status.setText("On delivery or delivered");
+            status.setText("On delivery");
             maxNum.setText(Integer.toString(driverPost.getMaxOrderNum()));
-            curNum.setText("Info from Backend");
+            curNum.setText("2");
             resName.setText(driverPost.getresName());
             returnAdd.setText(driverPost.gettargetAddress());
 

@@ -4,40 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.food2school.loginregister.CustomerCheckout">
+    tools:context="com.food2school.loginregister.CustOrderStatus">
+
 
     <TextView
-        android:id="@+id/tvCheckoutAddr"
-        android:layout_width="352dp"
+        android:id="@+id/tvOrderStatAddr"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:text="[Destination]"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_DeliTo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/textView_DeliTo"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_DeliTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:gravity="start"
-        android:text="--Address"
+        android:text="Deliver to: "
         android:textAlignment="viewStart"
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvCheckoutRestName"
+        android:id="@+id/textView_Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:gravity="start"
-        android:text="--Restaurant_Name"
-        android:textAlignment="viewStart"
+        android:text="Order Time: "
         android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutAddr"
-        app:layout_constraintTop_toBottomOf="@+id/tvCheckoutAddr" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView_DeliTo"
+        app:layout_constraintTop_toBottomOf="@+id/textView_DeliTo" />
+
+    <TextView
+        android:id="@+id/tvOrderStatTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Time]"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_Time"
+        app:layout_constraintLeft_toRightOf="@+id/textView_Time" />
+
+    <TextView
+        android:id="@+id/tvOrderStatRestName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Restaurant]"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textview_OrderStatDeliTime"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView_DeliTo" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="3dp"
         android:layout_marginEnd="16dp"
@@ -49,39 +75,36 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCheckoutRestName"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderStatRestName"
         app:srcCompat="@android:drawable/divider_horizontal_dark" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView4"
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/textView_Total"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@android:drawable/divider_horizontal_dark" />
+        app:srcCompat="@android:drawable/divider_horizontal_dark"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_OrderStatTot" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:layout_marginTop="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -89,22 +112,22 @@
             android:layout_marginTop="8dp">
 
             <TextView
-                android:id="@+id/tvCheckoutQuantity"
+                android:id="@+id/tvOrderStatQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="191dp"
-                android:layout_marginStart="191dp"
+                android:layout_marginLeft="190dp"
+                android:layout_marginStart="190dp"
                 android:gravity="start"
                 android:text="#Quantity"
                 android:textAlignment="textStart"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutFoodName"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/tvCheckoutFoodPrice"
+                android:id="@+id/tvOrderStatFoodPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="279dp"
@@ -115,13 +138,13 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutFoodName"
+                app:layout_constraintLeft_toLeftOf="@+id/tvOrderStatFoodName"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/tvCheckoutFoodName"
+                android:id="@+id/tvOrderStatFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -137,41 +160,52 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/bCheckout"
-        android:layout_width="99dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="CHECKOUT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
     <TextView
-        android:id="@+id/textView_Total"
+        android:id="@+id/tvOrderStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:text="TOTAL:"
+        android:text="[ON DELIVERY]"
+        android:textSize="18sp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvOrderStatRestName"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/textView_OrderStatTot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="TOTAL: "
+        android:textAlignment="viewStart"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/tvCheckoutTotCost"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="end"
-        android:text="--TotalCost"
+        android:text="[Total Cost]"
         android:textAlignment="viewEnd"
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_Total" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_OrderStatTot"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_OrderStatDeliTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:text="Estimated Delivery Time: "
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView_DeliTo"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Time" />
 
 </android.support.constraint.ConstraintLayout>

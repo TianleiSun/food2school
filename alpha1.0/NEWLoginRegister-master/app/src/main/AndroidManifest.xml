@@ -53,7 +53,8 @@
         <activity android:name=".DriverPost" />
         <activity android:name=".OrderHistory" />
         <activity android:name=".DriverDeliveryStatus" />
-        <activity android:name=".CustomerCheckout"></activity>
+        <activity android:name=".CustomerCheckout" />
+        <activity android:name=".CustOrderStatus"></activity>
     </application>
 
 </manifest>

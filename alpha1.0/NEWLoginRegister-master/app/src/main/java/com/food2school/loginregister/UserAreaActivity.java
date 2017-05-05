@@ -108,7 +108,7 @@ public class UserAreaActivity extends AppCompatActivity {
                         builder.setMessage("Cannot Connect to Server!")
                                 .setNegativeButton("Retry", null)
                                 .create()
-                                .show();
+                                .show   ();
                     }
 
                 } catch (JSONException e) {

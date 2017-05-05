@@ -16,7 +16,6 @@ public class RegisterRequest extends StringRequest {
         params.put("username", username);
         params.put("password", password);
         params.put("phone", phone);
-        System.out.println(username);
         params.put("address", address);
         params.put("email", email);
     }

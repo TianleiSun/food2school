@@ -10,36 +10,39 @@ import android.os.Parcelable;
 public class Post implements Parcelable {
     private String resName;
     private int driverID;
+    private int restID;
     private String targetAddress;
-    private String finishTime;
-    private String acceptUntilTime;
+    private String deliveryTime;
     private int maxOrderNum;
 
-    public Post(String R, int D, String T, String F, String A, int M){
-        resName = R;
-        driverID = D;
-        targetAddress = T;
-        finishTime = F;
-        acceptUntilTime = A;
-        maxOrderNum = M;
-    }
+
 
     protected Post(Parcel in) {
         resName = in.readString();
         driverID = in.readInt();
+        restID = in.readInt();
         targetAddress = in.readString();
-        finishTime = in.readString();
-        acceptUntilTime = in.readString();
+        deliveryTime = in.readString();
         maxOrderNum = in.readInt();
     }
+
+    public Post(String R, int D, int rID, String T, String F, int M){
+        resName = R;
+        driverID = D;
+        restID = rID;
+        targetAddress = T;
+        deliveryTime = F;
+        maxOrderNum = M;
+    }
+
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(resName);
         dest.writeInt(driverID);
+        dest.writeInt(restID);
         dest.writeString(targetAddress);
-        dest.writeString(finishTime);
-        dest.writeString(acceptUntilTime);
+        dest.writeString(deliveryTime);
         dest.writeInt(maxOrderNum);
     }
 
@@ -76,6 +79,14 @@ public class Post implements Parcelable {
         this.driverID = I;
     }
 
+    public int getrestID(){
+        return this.restID;
+    }
+
+    public void setrestID(int I){
+        this.restID = I;
+    }
+
     public String gettargetAddress(){
         return this.targetAddress;
     }
@@ -84,20 +95,12 @@ public class Post implements Parcelable {
         this.targetAddress = A;
     }
 
-    public String getfinishTime(){
-        return this.finishTime;
+    public String getDeliveryTime(){
+        return this.deliveryTime;
     }
 
-    public void setfinishTime(String P){
-        this.finishTime = P;
-    }
-
-    public String getacceptUntilTime(){
-        return this.acceptUntilTime;
-    }
-
-    public void setacceptUntilTime(String E){
-        this.acceptUntilTime = E;
+    public void setDeliveryTime(String P){
+        this.deliveryTime = P;
     }
 
     public int getMaxOrderNum(){return this.maxOrderNum;}
