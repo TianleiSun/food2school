@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -17,9 +19,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
+
 public class DriverPost extends AppCompatActivity {
     AutoCompleteTextView acTextView;
-    String[] restlist = {"boiling point", "bluefin"};
+    String[] restlist = {"boiling point", "bluefin", "urban plate", "burger king"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,12 @@ public class DriverPost extends AppCompatActivity {
 
         final EditText resName = (EditText) findViewById(R.id.autoCompleteTextView);
         final EditText targetAddress = (EditText) findViewById(R.id.etReturnAddress);
-        final EditText deliveryTime = (EditText) findViewById(R.id.etDeliveryTime);
+        final DatePicker deliveryDate = (DatePicker) findViewById(R.id.datePicker);
+
+
+        final TimePicker deliveryTime = (TimePicker) findViewById(R.id.timePicker);
+        deliveryTime.setIs24HourView(true);
+
         final EditText maxOrderNum = (EditText) findViewById(R.id.etMaxOrderNum);
 
 
@@ -52,7 +61,12 @@ public class DriverPost extends AppCompatActivity {
 
                 final String localResName = resName.getText().toString();
                 final String localTargetAddress = targetAddress.getText().toString();
-                final String localDeliveryTime = deliveryTime.getText().toString();
+                final int hour = deliveryTime.getHour();
+                final int minute = deliveryTime.getMinute();
+                final int month = deliveryDate.getMonth() + 1;
+                final int day = deliveryDate.getDayOfMonth();
+                final String localDeliveryTime = new StringBuilder().append("2017-").append(pad(month)).append("-")
+                        .append(pad(day)).append(" ").append(pad(hour)).append(":").append(pad(minute)).append(":00").toString();
                 final int localMaxOrder = Integer.valueOf(maxOrderNum.getText().toString());
 
 
@@ -100,4 +114,12 @@ public class DriverPost extends AppCompatActivity {
 //        });
 
     }
+
+    private static String pad(int c) {
+        if (c >= 10)
+            return String.valueOf(c);
+        else
+            return "0" + String.valueOf(c);
+    }
+
 }
