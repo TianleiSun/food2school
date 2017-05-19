@@ -1,177 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.food2school.loginregister.CustomerCheckout">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tvCheckoutAddr"
-        android:layout_width="352dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="start"
-        android:text="--Address"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/checkout_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvCheckoutRestName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="start"
-        android:text="--Restaurant_Name"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutAddr"
-        app:layout_constraintTop_toBottomOf="@+id/tvCheckoutAddr" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCheckoutRestName"
-        app:srcCompat="@android:drawable/divider_horizontal_dark" />
+        <LinearLayout
+            android:id="@+id/checkout_address"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white_bg"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+            <TextView
+                style="@style/Title.Card.WithPadding"
+                android:background="@color/dark_gray_bg"
+                android:text="Delivery Detail"
+                />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/textView_Total"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@android:drawable/divider_horizontal_dark" />
+            <LinearLayout
+                style="@style/Card.WithDivider"
+                android:layout_marginTop="0.0dip">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
 
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp">
+                <LinearLayout style="@style/CardItem.FixedHeight">
+
+                    <TextView
+                        style="@style/Txt.Hint"
+                        android:text="Address"
+                        android:textColor="@color/primary_text"/>
+
+                    <EditText
+                        style="@style/Widget.Mosswine.EditText"
+                        android:id="@+id/txt_deliver_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cell_normal"
+                        android:layout_marginLeft="30dp"
+                        android:background="@null"
+                        android:hint="Street Address"
+
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/stroke"
+                    android:background="@color/divider" />
+                <LinearLayout style="@style/CardItem.FixedHeight">
+                    <EditText
+                        style="@style/Widget.Mosswine.EditText"
+                        android:id="@+id/txt_deliver_apt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cell_normal"
+                        android:layout_marginLeft="85dp"
+                        android:background="@null"
+                        android:hint="Apt Number"
+
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/checkout_list"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white_bg"
+            android:layout_below="@id/checkout_address"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true">
+
 
             <TextView
-                android:id="@+id/tvCheckoutQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="191dp"
-                android:layout_marginStart="191dp"
-                android:gravity="start"
-                android:text="#Quantity"
-                android:textAlignment="textStart"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutFoodName"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:id="@+id/checkout_resName"
+                style="@style/Title.Card.WithPadding"
+                android:background="@color/dark_gray_bg"
+                />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvCheckoutFoodPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="279dp"
-                android:layout_marginStart="279dp"
-                android:gravity="end"
-                android:text="$price"
-                android:textAlignment="viewEnd"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintLeft_toLeftOf="@+id/tvCheckoutFoodName"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/tvCheckoutFoodName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:gravity="start"
-                android:text="[food_name]"
-                android:textAlignment="textStart"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
 
-    <Button
-        android:id="@+id/bCheckout"
-        android:layout_width="99dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="CHECKOUT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_Total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:text="TOTAL:"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/tvCheckoutTotCost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:gravity="end"
-        android:text="--TotalCost"
-        android:textAlignment="viewEnd"
-        android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_Total" />
-
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

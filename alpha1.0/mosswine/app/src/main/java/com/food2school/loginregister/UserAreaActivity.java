@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -31,6 +33,7 @@ public class UserAreaActivity extends AppCompatActivity {
     private RecyclerView mRecycleView;
     private LinearLayoutManager mLinearLayoutManager;
     private List<Restaurant> resLis;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +42,15 @@ public class UserAreaActivity extends AppCompatActivity {
         mRecycleView.setHasFixedSize(true);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecycleView.setLayoutManager(mLinearLayoutManager);
+
         resLis=new ArrayList<Restaurant> ();
-        final Button bProfile = (Button) findViewById(R.id.bProfile);
-        final Button bOrder = (Button) findViewById(R.id.bOrder);
+        final ImageButton bProfile = (ImageButton) findViewById(R.id.bProfile);
+        final ImageButton bOrder = (ImageButton) findViewById(R.id.bOrder);
         final Button bPost = (Button) findViewById(R.id.bPost);
-        final Button bDelivery = (Button) findViewById(R.id.bDelivery);
+        final ImageButton bDelivery = (ImageButton) findViewById(R.id.bDelivery);
 
 
-        final User user=getIntent().getParcelableExtra("user");
+        user=getIntent().getParcelableExtra("user");
         //ArrayList<Restaurant> resLis=getNearbyRestaurant(getLocation());
         getNearbyRestaurant(getLocation());
         bProfile.setOnClickListener(new View.OnClickListener() {
@@ -118,13 +122,16 @@ public class UserAreaActivity extends AppCompatActivity {
         };
 
         FetchRestaurantRequest fetchRestaurantRequest = new FetchRestaurantRequest(location.toLowerCase(), responseListener);
+        fetchRestaurantRequest.setRetryPolicy(new DefaultRetryPolicy(50000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue queue = Volley.newRequestQueue(UserAreaActivity.this);
         queue.add(fetchRestaurantRequest);
     }
 
 
     private void initializeAdapter(){
-        RVAdaptorUserArea adapter = new RVAdaptorUserArea(resLis);
+        RVAdaptorUserArea adapter = new RVAdaptorUserArea(resLis, UserAreaActivity.this, user);
         mRecycleView.setAdapter(adapter);
     }
 }

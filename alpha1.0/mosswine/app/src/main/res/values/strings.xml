@@ -1,9 +1,18 @@
 <resources>
-    <string name="app_name">Food to School</string>
+    <string name="app_name">me2</string>
     <string name="main_page">Main Page</string>
     <string name="profile_settings">Profile and Settings</string>
+    <string name="post">Post</string>
+    <string name="order_history">Order History</string>
+    <string name="checkout">Checkout</string>
+    <string name="order_status">Order Status</string>
+    <string name="post_status">Post Status</string>
     <string name="log_in">Log In</string>
     <string name="register">Register Page</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="name">%1$s</string>
+    <string name="price">%.02f</string>
 
 
 </resources>

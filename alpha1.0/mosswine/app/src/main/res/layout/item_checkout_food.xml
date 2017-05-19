@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        style="@style/CardItem.SmallHeight">
+        <TextView
+            android:id="@+id/item_name"
+            android:textColor="@color/primary_text"
+            style="@style/Txt.Hint"
+            android:textSize="@dimen/font_small"
+            tools:text="FoodName"
+            />
+        <TextView
+            android:id="@+id/item_quantity"
+            android:textColor="@color/primary_text"
+            style="@style/Txt.Hint"
+            android:textSize="@dimen/font_small"
+            tools:text="quantity"
+            android:gravity="right"
+
+            android:layout_marginLeft="200dp"
+            />
+        <TextView
+            android:id="@+id/price"
+            android:textColor="@color/primary_text"
+            style="@style/Txt.Hint"
+            android:textSize="@dimen/font_small"
+            tools:text="price"
+            android:gravity="right"
+
+            android:layout_marginLeft="250dp"
+
+            />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke"
+        android:background="@color/divider" />
+</LinearLayout>

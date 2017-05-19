@@ -19,8 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/log_in">
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +31,13 @@
             android:label="@string/register" />
         <activity
             android:name=".UserAreaActivity"
-            android:label="@string/main_page" />
+            android:label="@string/main_page">
+        <intent-filter>
+            <action android:name="OPEN_ACTIVITY_1" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -50,11 +55,30 @@
         <activity
             android:name=".ProfileSettings"
             android:label="@string/profile_settings" />
-        <activity android:name=".DriverPost" />
-        <activity android:name=".OrderHistory" />
-        <activity android:name=".DriverDeliveryStatus" />
-        <activity android:name=".CustomerCheckout" />
-        <activity android:name=".CustOrderStatus"></activity>
+        <activity
+            android:name=".DriverPost"
+            android:label="@string/post" />
+        <activity
+            android:name=".OrderHistory"
+            android:label="@string/order_history" />
+        <activity
+            android:name=".DriverDeliveryStatus"
+            android:label="@string/post_status" />
+        <activity
+            android:name=".CustomerCheckout"
+            android:label="@string/checkout" />
+        <activity
+            android:name=".CustOrderStatus"
+            android:label="@string/order_status" />
+        <activity android:name=".MenuActivity"></activity>
+
+        <service android:name=".MyFirebaseInstanceIDService"></service>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
+
 
 </manifest>

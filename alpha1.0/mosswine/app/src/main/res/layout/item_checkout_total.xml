@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:background="@color/primary_text" />
+
+    <RelativeLayout
+        style="@style/CardItem.FixedHeight"
+        android:paddingRight='0dp'>
+        <TextView
+            style="@style/Txt.Hint"
+            android:text="Total Price"
+            android:textColor="@color/primary_text"
+            />
+
+        <TextView
+            android:id="@+id/checkout_price"
+            style="@style/Txt.Hint"
+            tools:text="price"
+            android:gravity="right"
+            android:textColor="@color/primary_text"
+            android:layout_marginLeft="250dp"
+
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/checkout_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Confirm"
+        android:layout_gravity="bottom"
+        android:textColor="@color/white" />
+
+</LinearLayout>

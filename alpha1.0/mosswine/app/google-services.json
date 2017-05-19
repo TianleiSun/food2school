@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "787235032642",
+    "firebase_url": "https://food2school.firebaseio.com",
+    "project_id": "food2school",
+    "storage_bucket": "food2school.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787235032642:android:3dec1fc1a8c49c47",
+        "android_client_info": {
+          "package_name": "com.food2school.loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787235032642-sdmvhnhqf6fgfd5qf80b38u3mpi0aoa0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxnmus9y0u3dxufreY8ny8MagdWTs7GAI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787235032642:android:5920de3503a2d18c",
+        "android_client_info": {
+          "package_name": "com.google.firebase.quickstart.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787235032642-sdmvhnhqf6fgfd5qf80b38u3mpi0aoa0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxnmus9y0u3dxufreY8ny8MagdWTs7GAI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

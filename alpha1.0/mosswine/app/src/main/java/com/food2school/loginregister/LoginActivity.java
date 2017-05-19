@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setTitle(R.string.log_in);
 
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
@@ -42,8 +44,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
+                final String registrationID = FirebaseInstanceId.getInstance().getToken();
                 System.out.println(username);
                 System.out.println(password);
+                System.out.println(registrationID);
 
                 // Response received from the server
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -72,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
+                                pbar.setVisibility(View.GONE);
                             }
 
                         } catch (JSONException e) {
@@ -80,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 };
 
-                LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+                LoginRequest loginRequest = new LoginRequest(username, password, registrationID,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
                 pbar.setVisibility(View.VISIBLE);

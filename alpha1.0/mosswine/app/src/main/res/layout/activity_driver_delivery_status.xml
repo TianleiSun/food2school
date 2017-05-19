@@ -7,15 +7,17 @@
     tools:context="com.food2school.loginregister.DriverDeliveryStatus">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintHorizontal_bias="0.4"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_MaxNum">
+        app:layout_constraintTop_toBottomOf="@+id/textView_CurNum"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,35 +26,62 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
-                android:id="@+id/tvDeliOrderInfo"
-                android:layout_width="267dp"
+                android:id="@+id/tvDeliStatCust"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-1dp"
-                android:gravity="center_vertical"
-                android:text="[OrderInfo]"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="Customer Name"
+                android:textAlignment="viewStart"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toTopOf="@+id/tvDeliStatus"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
+                app:srcCompat="@android:drawable/divider_horizontal_dark" />
 
             <TextView
                 android:id="@+id/tvDeliStatus"
-                android:layout_width="93dp"
-                android:layout_height="69dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_marginTop="0dp"
-                android:gravity="center"
-                android:text="[STATUS]"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintLeft_toRightOf="@+id/tvDeliOrderInfo"
+                android:gravity="end"
+                android:text="CONFIRMED"
+                android:textAlignment="viewEnd"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toTopOf="@+id/tvDeliStatCust" />
+
+            <TextView
+                android:id="@+id/tvDeliOrderInfo"
+                android:layout_width="351dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|start"
+                android:inputType="textMultiLine"
+                android:text="Food1 * 1\nFood2 * 2"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDeliStatCust"
+                app:layout_constraintVertical_bias="0.0" />
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
@@ -60,10 +89,11 @@
         android:id="@+id/textView_MaxNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Max Order #: "
+        android:layout_marginTop="16dp"
+        android:text="MAX ORDER"
+        android:textColor="@color/primary_text"
         android:textSize="18sp"
-        android:layout_marginTop="26dp"
-        android:layout_marginLeft="0dp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/tvDeliRestName"
         app:layout_constraintTop_toBottomOf="@+id/textView_BackTo" />
 
@@ -71,79 +101,88 @@
         android:id="@+id/textView_CurNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accepted: "
+        android:layout_marginTop="15dp"
+        android:text="ACCEPTED"
+        android:textColor="@color/primary_text"
         android:textSize="18sp"
-        android:layout_marginLeft="228dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_MaxNum"
-        android:layout_marginTop="0dp" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/tvDeliRestName"
+        app:layout_constraintTop_toBottomOf="@+id/textView_MaxNum" />
 
     <TextView
         android:id="@+id/tvDeliMaxNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:gravity="end"
         android:text="10"
+        android:textAlignment="viewEnd"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@+id/textView_MaxNum"
-        app:layout_constraintLeft_toRightOf="@+id/textView_MaxNum"
-        android:layout_marginLeft="0dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_MaxNum"
+        app:layout_constraintRight_toRightOf="@+id/tvDeliReturnAddr" />
 
     <TextView
         android:id="@+id/tvDeliCurNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="0dp"
+        android:gravity="end"
         android:text="5"
+        android:textAlignment="viewEnd"
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/textView_CurNum"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_CurNum" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_CurNum"
+        app:layout_constraintRight_toRightOf="@+id/tvDeliMaxNum" />
 
     <TextView
         android:id="@+id/tvDeliRestName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="[Restaurant Name]"
-        android:textSize="18sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Restaurant Name"
+        android:textColor="@color/primary_text"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDeliReturnAddr"
-        android:layout_width="wrap_content"
+        android:layout_width="133dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="-16dp"
+        android:layout_marginRight="24dp"
+        android:gravity="end"
+        android:inputType="textMultiLine"
         android:text="[Return Address]"
+        android:textAlignment="viewEnd"
         android:textSize="18sp"
-        app:layout_constraintLeft_toRightOf="@+id/textView_BackTo"
-        app:layout_constraintTop_toTopOf="@+id/textView_BackTo" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_BackTo"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="24dp" />
 
     <TextView
         android:id="@+id/textView_BackTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="26dp"
-        android:text="Return To: "
+        android:layout_marginTop="24dp"
+        android:text="DELIVER TO"
+        android:textColor="@color/primary_text"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/tvDeliRestName"
         app:layout_constraintTop_toBottomOf="@+id/tvDeliRestName" />
 
     <Button
         android:id="@+id/bStopAccept"
-        android:layout_width="63dp"
-        android:layout_height="35dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
         android:text="STOP"
         android:textSize="14sp"
-        android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvDeliRestName" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="298dp" />
+
 </android.support.constraint.ConstraintLayout>

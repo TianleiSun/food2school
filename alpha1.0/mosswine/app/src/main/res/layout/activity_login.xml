@@ -1,13 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".UserAreaActivity">
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/content_padding"
+        android:layout_marginRight="@dimen/content_padding"
+        android:layout_marginTop="@dimen/content_padding"
+        android:background="@drawable/btn_radius_all_normal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cell_normal"
+            android:layout_marginLeft="1.0dip"
+            android:layout_marginRight="1.0dip"
+            android:layout_marginTop="1.0dip"
+            android:background="@drawable/btn_radius_top_normal"
+            android:orientation="horizontal"
+            android:paddingRight="5.0dip" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/content_padding"
+                android:layout_marginLeft="@dimen/content_margin"
+                android:layout_marginRight="@dimen/content_margin"
+                android:layout_marginTop="@dimen/content_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/login_name" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:hint="Username"
+                android:maxLength="50"
+                android:background="@null"
+                style="@style/Widget.Mosswine.EditText" />
+
+            <ImageView
+                android:id="@+id/iv_delete_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="8.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingTop="8.0dip"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_edit_delete"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.0px"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cell_normal"
+            android:layout_marginBottom="1.0dip"
+            android:layout_marginLeft="1.0dip"
+            android:layout_marginRight="1.0dip"
+            android:background="@drawable/btn_radius_bottom_normal"
+            android:orientation="horizontal"
+            android:paddingRight="5.0dip" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/content_padding"
+                android:layout_marginLeft="@dimen/content_margin"
+                android:layout_marginRight="@dimen/content_margin"
+                android:layout_marginTop="@dimen/content_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/login_password" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:background="@null"
+                style="@style/Widget.Mosswine.EditText" />
+
+            <ImageView
+                android:id="@+id/iv_delete_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="8.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingTop="8.0dip"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_edit_delete"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cell_normal"
+        android:layout_margin="@dimen/content_padding"
+        android:text="LOGIN"
+        style="@style/Widget.Mosswine.Button" />
+
+    <LinearLayout
+        android:id="@+id/layout_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/content_padding">
+
+        <TextView
+            android:id="@+id/tv_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:textSize="16.0sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvRegisterLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+
+            android:textSize="16.0sp" />
+    </LinearLayout>
+
     <ProgressBar
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleLarge"
@@ -15,49 +157,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:visibility="gone"  />
-    <EditText
-        android:id="@+id/etUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:hint="Username" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_below="@+id/etUsername"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:id="@+id/bSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etPassword"
-        android:text="Sign In" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Register Here"
-        android:id="@+id/tvRegisterLink"
-        android:layout_below="@+id/bSignIn"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:visibility="gone" />
+</LinearLayout>

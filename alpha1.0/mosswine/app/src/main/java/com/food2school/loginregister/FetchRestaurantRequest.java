@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class FetchRestaurantRequest extends StringRequest {
-    private static final String REQUEST_URL = "https://monoacid-condensati.000webhostapp.com/ResRequest.php";
+    private static final String REQUEST_URL = "http://ec2-34-210-186-213.us-west-2.compute.amazonaws.com/ResRequest.php";
     private Map<String, String> params;
 
     public FetchRestaurantRequest(String location, Response.Listener<String> listener) {
